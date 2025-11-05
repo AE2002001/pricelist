@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عروض Black Friday - Sunmed Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1d2e;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .top-banner {
+            background: linear-gradient(135deg, #c5a572 0%, #a88f5f 100%);
+            padding: 12px 0;
+            text-align: center;
+            color: #1a1d2e;
+            font-weight: 700;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 15px rgba(197, 165, 114, 0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            position: relative;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .logo-section img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 5px 20px rgba(197, 165, 114, 0.3));
+        }
+
+        .header h1 {
+            font-size: 4em;
+            background: linear-gradient(135deg, #c5a572 0%, #e8d4a8 50%, #c5a572 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            color: #e8e8e8;
+            margin-bottom: 10px;
+            font-weight: 300;
+            animation: fadeInDown 1s ease 0.2s backwards;
+        }
+
+        .header .agency {
+            font-size: 1.1em;
+            color: #c5a572;
+            font-weight: 600;
+            animation: fadeInDown 1s ease 0.3s backwards;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 60px 0 50px 0;
+        }
+
+        .section-divider h2 {
+            font-size: 2.2em;
+            color: #c5a572;
+            font-weight: 700;
+            margin-bottom: 15px;
+            animation: fadeIn 1s ease;
+        }
+
+        .section-divider p {
+            font-size: 1.1em;
+            color: #b8b8b8;
+            font-weight: 300;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+            padding: 0 0 60px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: linear-gradient(145deg, #242838 0%, #1f2332 100%);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(197, 165, 114, 0.15);
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+        .package-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c5a572, #e8d4a8, #c5a572);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(197, 165, 114, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(197, 165, 114, 0.15);
+        }
+
+        .package-card:hover::before {
+            opacity: 1;
+        }
+
+        .special-card-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 80px 0;
+            animation: fadeInUp 0.8s ease 0.5s backwards;
+        }
+
+        .special-card {
+            background: linear-gradient(145deg, #c5a572 0%, #b89968 100%);
+            border: 2px solid #e8d4a8;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(197, 165, 114, 0.3);
+            position: relative;
+        }
+
+        .special-card::after {
+            content: '⭐ العرض الحصري ⭐';
+            position: absolute;
+            top: -18px;
+            right: 50%;
+            transform: translateX(50%);
+            background: linear-gradient(135deg, #1a1d2e, #2a2d3e);
+            color: #c5a572;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 800;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .special-card * {
+            color: #1a1d2e !important;
+        }
+
+        .special-card .badge {
+            background: linear-gradient(135deg, #1a1d2e, #2a2d3e);
+            color: #c5a572 !important;
+        }
+
+        .special-card .cta-button {
+            background: linear-gradient(135deg, #1a1d2e, #2a2d3e);
+            color: #c5a572 !important;
+        }
+
+        .special-card .cta-button:hover {
+            background: linear-gradient(135deg, #2a2d3e, #1a1d2e);
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #c5a572, #e8d4a8);
+            color: #1a1d2e;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(197, 165, 114, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .package-title {
+            font-size: 4.5em;
+            background: linear-gradient(135deg, #c5a572 0%, #e8d4a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 25px 0 10px 0;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .package-subtitle {
+            font-size: 1.3em;
+            color: #b8b8b8;
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .features-list {
+            text-align: right;
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(197, 165, 114, 0.06);
+            border-radius: 16px;
+            border: 1px solid rgba(197, 165, 114, 0.1);
+        }
+
+        .feature-item {
+            color: #e8e8e8;
+            margin: 14px 0;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            font-weight: 400;
+        }
+
+        .feature-icon {
+            color: #c5a572;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        .camera-badge {
+            background: linear-gradient(135deg, #2a2d3e, #1f2332);
+            color: #c5a572;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 0.95em;
+            font-weight: 700;
+            margin: 20px 0;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(197, 165, 114, 0.2);
+        }
+
+        .duration-badge {
+            background: rgba(197, 165, 114, 0.1);
+            color: #c5a572;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid rgba(197, 165, 114, 0.2);
+        }
+
+        .price-section {
+            margin: 30px 0;
+            padding: 25px 0;
+            border-top: 1px solid rgba(197, 165, 114, 0.15);
+            border-bottom: 1px solid rgba(197, 165, 114, 0.15);
+        }
+
+        .old-price {
+            font-size: 1.2em;
+            color: #888;
+            text-decoration: line-through;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .new-price {
+            font-size: 3em;
+            background: linear-gradient(135deg, #c5a572 0%, #e8d4a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .currency {
+            font-size: 0.6em;
+            color: #b8b8b8;
+            margin-right: 8px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c5a572, #b89968);
+            color: #1a1d2e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #c5a572, #e8d4a8);
+            color: #1a1d2e;
+            border: none;
+            padding: 16px 45px;
+            border-radius: 35px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(197, 165, 114, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(197, 165, 114, 0.5);
+            background: linear-gradient(135deg, #e8d4a8, #c5a572);
+        }
+
+        .special-offer-text {
+            font-size: 1.3em;
+            color: #1a1d2e;
+            font-weight: 700;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #0f1118;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid rgba(197, 165, 114, 0.1);
+        }
+
+        .footer p {
+            color: #888;
+            font-size: 0.95em;
+            margin: 8px 0;
+        }
+
+        .footer .contact-info {
+            color: #c5a572;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1200px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.8em;
+            }
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .package-title {
+                font-size: 3.5em;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .logo-section img {
+                width: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        🎉 عرض محدود - Black Friday 2025 - خصومات حصرية لفترة محدودة 🎉
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231a1d2e' width='200' height='200'/%3E%3Cpath fill='%23c5a572' d='M100,40 L130,80 Q135,90 130,100 L115,120 Q110,125 105,120 L90,100 Q85,90 90,80 Z'/%3E%3Ccircle fill='%23c5a572' cx='105' cy='95' r='8'/%3E%3Cpath fill='%23c5a572' d='M70,160 Q75,150 85,155 L100,165 L115,155 Q125,150 130,160'/%3E%3C/svg%3E" alt="Sunmed Agency Logo">
+            </div>
+            <div class="agency">Sunmed Agency</div>
+            <h1>BLACK FRIDAY</h1>
+            <div class="subtitle">باقات تصوير Reels احترافية بأسعار استثنائية</div>
+        </div>
+
+        <div class="section-divider">
+            <h2>✨ باقاتنا المميزة ✨</h2>
+            <p>اختر الباقة المناسبة لمشروعك واحصل على محتوى بجودة سينمائية</p>
+        </div>
+
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="badge">مثالي للبداية</div>
+                <div class="package-title">4</div>
+                <div class="package-subtitle">REELS</div>
+                
+                <div class="camera-badge">📹 Sony A7 Mark IV</div>
+                <div class="duration-badge">⏱️ يوم واحد تصوير</div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>مونتاج وتعديل كامل</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>موسيقى وإيفكتات</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>تسليم سريع</span>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="old-price">4,500 <span class="currency">جنيه</span></div>
+                    <div class="new-price">3,500 <span class="currency">جنيه</span></div>
+                    <div class="discount-badge">وفر 1,000 جنيه</div>
+                </div>
+                <a href="https://wa.me/201099914537?text=أريد الحجز في باقة 4 Reels" class="cta-button">احجز الآن</a>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">الأكثر طلباً</div>
+                <div class="package-title">6</div>
+                <div class="package-subtitle">REELS</div>
+                
+                <div class="camera-badge">📹 Sony A7 Mark IV</div>
+                <div class="duration-badge">⏱️ يومين تصوير</div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>مونتاج وتعديل كامل</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>موسيقى وإيفكتات</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>ألوان احترافية</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>تنوع في المحتوى</span>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="old-price">6,000 <span class="currency">جنيه</span></div>
+                    <div class="new-price">4,500 <span class="currency">جنيه</span></div>
+                    <div class="discount-badge">وفر 1,500 جنيه</div>
+                </div>
+                <a href="https://wa.me/201099914537?text=أريد الحجز في باقة 6 Reels" class="cta-button">احجز الآن</a>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">قيمة ممتازة</div>
+                <div class="package-title">8</div>
+                <div class="package-subtitle">REELS</div>
+                
+                <div class="camera-badge">📹 Sony A7 Mark IV</div>
+                <div class="duration-badge">⏱️ 3 أيام بحد أقصى</div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>مونتاج وتعديل كامل</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>موسيقى وإيفكتات</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>ألوان احترافية</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>تنوع كامل في المحتوى</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>مراجعات مجانية</span>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="old-price">7,500 <span class="currency">جنيه</span></div>
+                    <div class="new-price">6,500 <span class="currency">جنيه</span></div>
+                    <div class="discount-badge">وفر 1,000 جنيه</div>
+                </div>
+                <a href="https://wa.me/201099914537?text=أريد الحجز في باقة 8 Reels" class="cta-button">احجز الآن</a>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">الأفضل قيمة</div>
+                <div class="package-title">10</div>
+                <div class="package-subtitle">REELS</div>
+                
+                <div class="camera-badge">📹 Sony A7 Mark IV</div>
+                <div class="duration-badge">⏱️ 3 أيام بحد أقصى</div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>مونتاج وتعديل متقدم</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>موسيقى وإيفكتات مميزة</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>ألوان سينمائية</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>تنوع شامل في المحتوى</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>أولوية في التنفيذ</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>دعم فني مميز</span>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="old-price">9,000 <span class="currency">جنيه</span></div>
+                    <div class="new-price">7,000 <span class="currency">جنيه</span></div>
+                    <div class="discount-badge">وفر 2,000 جنيه</div>
+                </div>
+                <a href="https://wa.me/201099914537?text=أريد الحجز في باقة 10 Reels" class="cta-button">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="section-divider" style="margin-top: 100px;">
+            <h2>👑 باقات الشركات والمؤسسات 👑</h2>
+            <p>حلول متكاملة مصممة خصيصاً لاحتياجات مؤسستك</p>
+        </div>
+
+        <div class="special-card-wrapper">
+            <div class="package-card special-card">
+                <div class="badge">VIP Package</div>
+                <div class="package-title">10+</div>
+                <div class="package-subtitle">REELS</div>
+                
+                <div class="special-offer-text">✨ حلول متكاملة للمشاريع الاحترافية ✨</div>
+                
+                <div class="camera-badge">📹 Sony A7 Mark IV</div>
+                <div class="duration-badge">⏱️ حسب نطاق المشروع</div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">★</span>
+                        <span>مونتاج وتعديل على مستوى احترافي</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">★</span>
+                        <span>إدارة كاملة للمحتوى الرقمي</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">★</span>
+                        <span>استشارات تسويقية متخصصة</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">★</span>
+                        <span>أولوية قصوى في التنفيذ</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">★</span>
+                        <span>فريق عمل مخصص</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">★</span>
+                        <span>تقارير أداء شاملة</span>
+                    </div>
+                </div>
+                
+                <div class="price-section" style="border: none; padding: 20px 0;">
+                    <div class="special-offer-text" style="font-size: 1.4em; margin: 0;">
+                        💼 عرض سعر مخصص حسب احتياجاتك
+                    </div>
+                    <p style="color: #1a1d2e; margin-top: 15px; font-size: 1.05em; line-height: 1.6;">
+                        نقدم لك عرضاً متكاملاً يتناسب مع حجم مؤسستك<br>
+                        وأهدافك التسويقية بأفضل قيمة ممكنة
+                    </p>
+                </div>
+                
+                <a href="https://wa.me/201099914537?text=أريد الاستفسار عن الباقة الحصرية VIP للشركات" class="cta-button">تواصل معنا للحصول على عرض مخصص</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Sunmed Agency - جميع الحقوق محفوظة</p>
+        <p class="contact-info">📱 +20 109 991 4537</p>
+        <p style="margin-top: 20px; font-size: 0.85em;">تصوير احترافي • مونتاج إبداعي • محتوى متميز</p>
+    </div>
+</body>
+</html>
